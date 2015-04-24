@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<bestMarks>
+  <event name="m60ll" sex="M">
+    <mark age="35">6,61</mark>
+    <mark age="36">6,71</mark>
+    <mark age="37">6,81</mark>
+    <mark age="38">6,91</mark>
+    <mark age="39">6,98</mark>
+  </event>
+</bestMarks>

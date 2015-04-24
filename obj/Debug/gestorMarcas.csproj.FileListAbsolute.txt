@@ -121,6 +121,5 @@ C:\Formacion\gestorMarcas\gestorMarcas\bin\Microsoft.Owin.Security.Google.xml
 C:\Formacion\gestorMarcas\gestorMarcas\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Formacion\gestorMarcas\gestorMarcas\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Formacion\gestorMarcas\gestorMarcas\bin\System.Web.Http.Owin.xml
-C:\Formacion\gestorMarcas\gestorMarcas\obj\Debug\gestorMarcas.csprojResolveAssemblyReference.cache
 C:\Formacion\gestorMarcas\gestorMarcas\obj\Debug\gestorMarcas.dll
 C:\Formacion\gestorMarcas\gestorMarcas\obj\Debug\gestorMarcas.pdb

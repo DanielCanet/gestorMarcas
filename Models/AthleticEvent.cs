@@ -1,7 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Web;
+using System.Web.WebPages;
+using System.Xml; 
+using System.Xml.Linq;
+using WebGrease.Css.Ast.Selectors;
 
 namespace gestorMarcas.Models
 {
@@ -26,6 +31,12 @@ namespace gestorMarcas.Models
 
         //    return result;
         //}
+        private XElement xElement { get; set; }
+
+        public AthleticEvent(String xmlFilePath)
+        {
+            this.xElement = XElement.Load(xmlFilePath);
+        }
 
         public decimal GetVelocityRacePercentage(eSex sex, int bornYear, VelocityRace athleticVelocityRace, decimal personalResult)
         {
@@ -44,7 +55,18 @@ namespace gestorMarcas.Models
 
             if (velocityRaceType == eVelocityRaceType.m60ll)
             {
-                result = 6.61m;
+
+                var mark = from nm in this.xElement.Elements("event")
+                           where (string)nm.Attribute("name") == "m60ll" 
+                           && (string)nm.Attribute("sex") == "M"                             
+                           && (string)nm.Element("mark").Attribute("age") == "35"
+                           select nm;
+
+                foreach (XElement bestMark in mark)
+                {
+                    string valor = bestMark.Element("mark").Value;
+                }
+
             }else if (velocityRaceType == eVelocityRaceType.m100ll)
             {
                 result = 6.61m;

@@ -1,0 +1,6 @@
+namespace gestorMarcas.Areas.HelpPage.ModelDescriptions
+{
+    public class DictionaryModelDescription : KeyValuePairModelDescription
+    {
+    }
+}

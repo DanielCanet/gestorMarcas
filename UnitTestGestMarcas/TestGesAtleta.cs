@@ -1,6 +1,5 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using gestorMarcas.Models;
 
 namespace UnitTestGestMarcas
 {

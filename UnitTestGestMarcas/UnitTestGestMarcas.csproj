@@ -50,14 +50,9 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="IPerson.cs" />
     <Compile Include="TestGesAtleta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\gestorMarcas\gestorMarcas.csproj">
-      <Project>{59f1a360-9d32-4a31-920b-0585776e180d}</Project>
-      <Name>gestorMarcas</Name>
-    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

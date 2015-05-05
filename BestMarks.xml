@@ -1,10 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <bestMarks>
-  <event name="m60ll" sex="M">
-    <mark age="35">6,61</mark>
-    <mark age="36">6,71</mark>
-    <mark age="37">6,81</mark>
-    <mark age="38">6,61</mark>
-    <mark age="39">6,98</mark>
-  </event>
+  <category sex="M" age="35">
+    <event name="m60ll">
+      <mark>6,61</mark>
+    </event>
+    <event name="m100ll">
+      <mark>10,61</mark>
+    </event>  
+  </category>
 </bestMarks>
+
+<!--<bestMarks>
+  <event name="m60ll">
+    <sex value="M">
+      <age yearsold="35">
+        <mark>6,61</mark>
+      </age>
+      <age yearsold="36">
+        <mark>6,71</mark>
+      </age>
+      <age yearsold="37">
+        <mark>6,81</mark>
+      </age>
+      <age yearsold="38">
+        <mark>6,91</mark>
+      </age>
+      <age yearsold="39">
+        <mark>7,01</mark>
+      </age>
+    </sex>
+  </event>  
+</bestMarks>-->

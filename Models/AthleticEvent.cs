@@ -56,15 +56,13 @@ namespace gestorMarcas.Models
             if (velocityRaceType == eVelocityRaceType.m60ll)
             {
 
-                var mark = from nm in this.xElement.Elements("event")
-                           where (string)nm.Attribute("name") == "m60ll" 
-                           && (string)nm.Attribute("sex") == "M"                             
-                           && (string)nm.Element("mark").Attribute("age") == "35"
-                           select nm;
-
+                var mark = from nm in this.xElement.Elements("category")
+                           where (string)nm.Attribute("age") == "35" && (string)nm.Element("event").Attribute("name") == "m60ll"                           
+                           select nm.Element("event");
+                //&& (string)nm.Attribute("sex") == "M"
                 foreach (XElement bestMark in mark)
                 {
-                    string valor = bestMark.Element("mark").Value;
+                    result = bestMark.Element("mark").Value.AsDecimal();
                 }
 
             }else if (velocityRaceType == eVelocityRaceType.m100ll)

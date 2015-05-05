@@ -9,25 +9,3 @@
     </event>  
   </category>
 </bestMarks>
-
-<!--<bestMarks>
-  <event name="m60ll">
-    <sex value="M">
-      <age yearsold="35">
-        <mark>6,61</mark>
-      </age>
-      <age yearsold="36">
-        <mark>6,71</mark>
-      </age>
-      <age yearsold="37">
-        <mark>6,81</mark>
-      </age>
-      <age yearsold="38">
-        <mark>6,91</mark>
-      </age>
-      <age yearsold="39">
-        <mark>7,01</mark>
-      </age>
-    </sex>
-  </event>  
-</bestMarks>-->

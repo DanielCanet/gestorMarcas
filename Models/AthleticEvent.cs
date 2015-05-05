@@ -53,27 +53,13 @@ namespace gestorMarcas.Models
         {
             decimal result = 0;
 
-            if (velocityRaceType == eVelocityRaceType.m60ll)
+            string x = bornYear.ToString();
+            var mark = from nm in this.xElement.Elements("category")
+                        where (string)nm.Attribute("age") == bornYear.ToString() && (string)nm.Element("event").Attribute("name") == velocityRaceType.ToString()                           
+                        select nm.Element("event");
+            foreach (XElement bestMark in mark)
             {
-
-                var mark = from nm in this.xElement.Elements("category")
-                           where (string)nm.Attribute("age") == "35" && (string)nm.Element("event").Attribute("name") == "m60ll"                           
-                           select nm.Element("event");
-                //&& (string)nm.Attribute("sex") == "M"
-                foreach (XElement bestMark in mark)
-                {
-                    result = bestMark.Element("mark").Value.AsDecimal();
-                }
-
-            }else if (velocityRaceType == eVelocityRaceType.m100ll)
-            {
-                result = 6.61m;
-            }else if (velocityRaceType == eVelocityRaceType.m200ll)
-            {
-                result = 6.61m;
-            }else if (velocityRaceType == eVelocityRaceType.m400ll)
-            {
-                result = 6.61m;
+                result = bestMark.Element("mark").Value.AsDecimal();
             }
 
             return result;

@@ -8,7 +8,7 @@ namespace gestorMarcas.Models
 {
     public interface ICategory
     {
-        string GetCategory(IPerson person);
-        string GetYearCategory(IPerson person);
+        string GetCategory(Athlete athlete);
+        string GetYearCategory(Athlete athlete);
     }
 }

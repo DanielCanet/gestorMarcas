@@ -6,7 +6,7 @@ using System.Web;
 namespace gestorMarcas.Models
 {
 
-    public class Athlete : IPerson
+    public class Athlete : Person
     {
         public DateTime BornDate { get; set; }
         public eSex Sex { get; set; }

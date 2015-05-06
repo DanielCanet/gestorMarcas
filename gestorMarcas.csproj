@@ -206,14 +206,14 @@
     </Compile>
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Atleta.cs" />
+    <Compile Include="Models\Athlete.cs" />
     <Compile Include="Models\AthleticEvent.cs" />
     <Compile Include="Models\GestorMarcasContext.cs" />
+    <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Races\HalfDistanceRace.cs" />
     <Compile Include="Models\Concourses\IConcourse.cs" />
     <Compile Include="Models\IEvent.cs" />
     <Compile Include="Models\Races\LongDistanceRace.cs" />
-    <Compile Include="Models\IPerson.cs" />
     <Compile Include="Models\Races\IRace.cs" />
     <Compile Include="Models\Concourses\Shot.cs" />
     <Compile Include="Models\Hurdles.cs" />

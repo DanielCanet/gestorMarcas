@@ -158,3 +158,4 @@ C:\Formacion\gestorMarcas\gestorMarcas\bin\Microsoft.Owin.Security.MicrosoftAcco
 C:\Formacion\gestorMarcas\gestorMarcas\bin\System.Web.Http.Owin.xml
 C:\Formacion\gestorMarcas\gestorMarcas\obj\Debug\gestorMarcas.dll
 C:\Formacion\gestorMarcas\gestorMarcas\obj\Debug\gestorMarcas.pdb
+C:\Formacion\gestorMarcas\gestorMarcas\obj\Debug\gestorMarcas.csprojResolveAssemblyReference.cache

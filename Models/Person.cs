@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web;
 
 namespace gestorMarcas.Models
 {
-    public enum eSex { M, F }
-
-    public interface IPerson
+    public abstract class Person
     {
+        public enum eSex { M, F }
+
         DateTime BornDate { get; set; }
         eSex Sex { get; set; }
     }

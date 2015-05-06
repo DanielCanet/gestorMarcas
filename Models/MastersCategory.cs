@@ -8,7 +8,7 @@ namespace gestorMarcas.Models
     public class MastersCategory : ICategory
     {
 
-        private int GetYearsOld(IPerson athlete)
+        private int GetYearsOld(Athlete athlete)
         {
             int diffYear = DateTime.Today.Year - athlete.BornDate.Year;
 
@@ -28,13 +28,13 @@ namespace gestorMarcas.Models
             }
         }
 
-        public string GetCategory(IPerson athlete)
+        public string GetCategory(Athlete athlete)
         {
             int result = this.GetYearsOld(athlete) / 5 * 5;
             return athlete.Sex + result.ToString();
         }
 
-        public string GetYearCategory(IPerson athlete)
+        public string GetYearCategory(Athlete athlete)
         {
             return athlete.Sex + this.GetYearsOld(athlete).ToString();
         }

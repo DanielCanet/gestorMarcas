@@ -38,7 +38,7 @@ namespace gestorMarcas.Models
             this.xElement = XElement.Load(xmlFilePath);
         }
 
-        public decimal GetVelocityRacePercentage(eSex sex, int bornYear, VelocityRace athleticVelocityRace, decimal personalResult)
+        public decimal GetVelocityRacePercentage(Person.eSex sex, int bornYear, VelocityRace athleticVelocityRace, decimal personalResult)
         {
             decimal result = 0;
 
@@ -49,7 +49,7 @@ namespace gestorMarcas.Models
             return result;
         }
 
-        public decimal GetVelocityRaceTableResult(eSex sex, int bornYear, eVelocityRaceType velocityRaceType)
+        public decimal GetVelocityRaceTableResult(Person.eSex sex, int bornYear, eVelocityRaceType velocityRaceType)
         {
             decimal result = 0;
 

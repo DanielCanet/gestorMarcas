@@ -9,7 +9,7 @@ namespace gestorMarcas.Models
     {
         public enum eSex { M, F }
 
-        DateTime BornDate { get; set; }
-        eSex Sex { get; set; }
+        public DateTime BornDate { get; set; }
+        public eSex Sex { get; set; }
     }
 }

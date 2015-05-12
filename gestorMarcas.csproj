@@ -208,6 +208,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Athlete.cs" />
     <Compile Include="Models\AthleticEvent.cs" />
+    <Compile Include="Models\Category.cs" />
     <Compile Include="Models\GestorMarcasContext.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Races\HalfDistanceRace.cs" />
@@ -218,8 +219,6 @@
     <Compile Include="Models\Concourses\Shot.cs" />
     <Compile Include="Models\Hurdles.cs" />
     <Compile Include="Models\Concourses\JumpConcourse.cs" />
-    <Compile Include="Models\MastersCategory.cs" />
-    <Compile Include="Models\ICategory.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Races\VelocityRace.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

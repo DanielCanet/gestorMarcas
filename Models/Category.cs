@@ -7,11 +7,10 @@ namespace gestorMarcas.Models
 {
     public class Category
     {
-        private Athlete athlete { get; set; }
+        private readonly Athlete athlete;
 
         public Category(Athlete athlete)
         {
-            this.athlete = new Athlete();
             this.athlete = athlete;
         }
 

@@ -14,23 +14,6 @@ namespace gestorMarcas.Models
     public class AthleticEvent
     {
 
-        //public decimal GetPercentage(eSex sex, int bornYear, IEvent athleticEvent, decimal personalResult)
-        //{
-        //    decimal result = 0;
-        //    if (athleticEvent.EventType == eEventType.race)
-        //    {
-        //        decimal bestTableResult = GetTableResult(sex, bornYear, athleticEvent);
-        //        result = bestTableResult * 100 / personalResult;
-        //        result = decimal.Round(result, 2);
-        //    }else if(athleticEvent.EventType == eEventType.concourse)
-        //    {
-        //        decimal bestTableResult = GetTableResult(sex, bornYear, athleticEvent);
-        //        result = personalResult * 100 / bestTableResult;
-        //        result = decimal.Round(result, 2);
-        //    }
-
-        //    return result;
-        //}
         private XElement xElement { get; set; }
 
         public AthleticEvent(String xmlFilePath)

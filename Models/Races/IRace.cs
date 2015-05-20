@@ -12,10 +12,6 @@ namespace gestorMarcas.Models
     public interface IRace : IEvent
     {
         eEventType EventType { get; set; }
-        //{
-        //    get { return eEventType.race; }
-        //    set { this.EventType = eEventType.race; }
-        //}
         eRaceType RaceType { get; set; }
     }
 }

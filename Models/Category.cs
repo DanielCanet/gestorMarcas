@@ -14,7 +14,7 @@ namespace gestorMarcas.Models
             this.athlete = athlete;
         }
 
-        private int GetYearsOld()
+        public int GetYearsOld()
         {
             int diffYear = DateTime.Today.Year - this.athlete.BornDate.Year;
 

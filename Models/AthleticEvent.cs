@@ -21,25 +21,26 @@ namespace gestorMarcas.Models
             this.xElement = XElement.Load(xmlFilePath);
         }
 
-        public decimal GetVelocityRacePercentage(Person.eSex sex, int bornYear, VelocityRace athleticVelocityRace, decimal personalResult)
+        public decimal GetVelocityRacePercentage(Athlete athlete, VelocityRace athleticVelocityRace, decimal personalResult)
         {
             decimal result = 0;
 
-            decimal bestTableResult = GetVelocityRaceTableResult(sex, bornYear, athleticVelocityRace.VelocityRaceType);
+            decimal bestTableResult = GetVelocityRaceTableResult(athlete, athleticVelocityRace.VelocityRaceType);
             result = bestTableResult * 100 / personalResult;
             result = decimal.Round(result, 2);
 
             return result;
         }
 
-        public decimal GetVelocityRaceTableResult(Person.eSex sex, int bornYear, eVelocityRaceType velocityRaceType)
+        public decimal GetVelocityRaceTableResult(Athlete athlete, eVelocityRaceType velocityRaceType)
         {
             decimal result = 0;
 
-            string x = bornYear.ToString();
+            string bornYear = athlete.GetYearsOld().ToString();
+
             var mark = from nm in this.xElement.Elements("category")
-                        where (string)nm.Attribute("age") == bornYear.ToString() && (string)nm.Element("event").Attribute("name") == velocityRaceType.ToString()                           
-                        select nm.Element("event");
+                       where (string)nm.Attribute("age") == bornYear && (string)nm.Element("event").Attribute("name") == velocityRaceType.ToString()
+                       select nm.Element("event");
             foreach (XElement bestMark in mark)
             {
                 result = bestMark.Element("mark").Value.AsDecimal();
@@ -47,5 +48,6 @@ namespace gestorMarcas.Models
 
             return result;
         }
+
     }
 }

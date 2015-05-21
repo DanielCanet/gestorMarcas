@@ -18,7 +18,7 @@ namespace gestorMarcas.Models
         }
         public eRaceType RaceType
         {
-            get { return eRaceType.halfDistance; }
+            get { return eRaceType.longDistance; }
             set { }
         }
         eLongDistanceRaceType LongDistanceRaceType { get; set; }

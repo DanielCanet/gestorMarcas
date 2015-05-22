@@ -37,9 +37,12 @@ namespace gestorMarcas.Models
             decimal result = 0;
 
             string bornYear = athlete.GetYearsOld().ToString();
+            string sex = athlete.Sex.ToString();
 
             var mark = from nm in this.xElement.Elements("category")
-                       where (string)nm.Attribute("age") == bornYear && (string)nm.Element("event").Attribute("name") == velocityRaceType.ToString()
+                       where (string)nm.Attribute("sex") == sex && 
+                       (string)nm.Attribute("age") == bornYear && 
+                       (string)nm.Element("event").Attribute("name") == velocityRaceType.ToString()
                        select nm.Element("event");
             foreach (XElement bestMark in mark)
             {

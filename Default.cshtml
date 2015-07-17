@@ -1,0 +1,97 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title></title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    </head>
+<body>
+    <div class="row">
+        <div class="col-md-1">
+            <label for="fecha_alta">Fecha de nacimiento</label>
+        </div>
+        <div class="col-md-2">
+            <input type="date" class="form-control" id="fecha_nacimiento" placeholder="Fecha alta">
+        </div>
+    </div>
+    
+    <div class="row" style="margin-bottom: 5px">
+        <div class="col-md-1">
+            <label for="sexo">Sexo</label>
+        </div>
+        <div class="col-md-2">
+            <input type="text" class="form-control" list="sexo" id="list_sexo" placeholder="Hombre/Mujer">
+            <datalist id="sexo">
+                <option value="Masculina">M</option>
+                <option value="Femenina">F</option>
+            </datalist>
+        </div>
+    </div>
+    
+    <div class="row" style="margin-bottom: 5px">
+        <div class="col-md-1">
+            <label for="prueba">Edad</label>
+        </div>
+        <div class="col-md-2">
+            <input type="text" class="form-control" id="edad" placeholder="Edad">
+        </div>
+    </div>
+
+    <div class="row" style="margin-bottom: 5px">
+        <div class="col-md-1">
+            <label for="prueba">Prueba atlètica</label>
+        </div>
+        <div class="col-md-2">
+            <input type="text" class="form-control" list="prueba" id="list_prueba" placeholder="Prueba atlética">
+            <datalist id="prueba">
+                <option value="60ml">60ml</option>
+                <option value="100ml">100ml</option>
+                <option value="200ml">200ml</option>
+                <option value="400ml">400ml</option>
+            </datalist>
+        </div>
+    </div>
+
+
+
+    <div id="content" style="background-color:Black;color:white;">
+        <button type="button" class="btn btn-primary" id="bonus" onclick="getCategory($('#fecha_nacimiento').val());" class="glyphicon glyphicon-usd">Categoría</button>
+    </div>
+</body>
+</html>
+
+<script type="text/javascript">
+
+    $(document).ready(function() {
+        var dataList = $("#categoria");
+        dataList.empty();
+
+            for (var i = 35, len = 100; i < len; i++) {
+                var opt = $("<option></option>").attr("value", i);
+                dataList.append(opt);
+            }
+    });
+
+    function getCategory(fecha_nacimiento) {
+        $.ajax({
+            url: "/api/GestorMarcas/GetCategory/",
+            type: "GET",
+            data: { bornDate: fecha_nacimiento, sex: 'M' },
+            statusCode: {
+                200: function (data) {
+                    jQuery("#content").hide("slow", function () {
+                        $(this).html(data).show("slow");
+                    });
+
+                },
+                404: function () { alert("fail"); }
+            }
+        });
+    }
+
+</script>

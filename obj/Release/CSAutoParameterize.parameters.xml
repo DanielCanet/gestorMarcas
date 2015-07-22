@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=DCANET\SQL2012;AttachDbFilename=|DataDirectory|\aspnet-gestorMarcas-20150202112945.mdf;Initial Catalog=msdb;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Formacion\\gestorMarcas\\gestorMarcas\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="gestorMarcas.Models.GestorMarcasContext-Web.config Connection String" description="gestorMarcas.Models.GestorMarcasContext Connection String used in web.config by the application to access the database." defaultValue="gestorMarcas.Models.GestorMarcasContext_ConnectionString" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Formacion\\gestorMarcas\\gestorMarcas\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='gestorMarcas.Models.GestorMarcasContext']/@connectionString" />
+  </parameter>
+</parameters>

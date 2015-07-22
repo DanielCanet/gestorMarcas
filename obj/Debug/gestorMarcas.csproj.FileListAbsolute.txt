@@ -118,7 +118,9 @@ C:\Formacion\gestorMarcas\gestorMarcas\bin\Microsoft.Web.Infrastructure.dll
 C:\Formacion\gestorMarcas\gestorMarcas\bin\Newtonsoft.Json.dll
 C:\Formacion\gestorMarcas\gestorMarcas\bin\Owin.dll
 C:\Formacion\gestorMarcas\gestorMarcas\bin\System.Net.Http.Formatting.dll
+C:\Formacion\gestorMarcas\gestorMarcas\bin\System.Web.Cors.dll
 C:\Formacion\gestorMarcas\gestorMarcas\bin\System.Web.Helpers.dll
+C:\Formacion\gestorMarcas\gestorMarcas\bin\System.Web.Http.Cors.dll
 C:\Formacion\gestorMarcas\gestorMarcas\bin\System.Web.Http.dll
 C:\Formacion\gestorMarcas\gestorMarcas\bin\System.Web.Http.Owin.dll
 C:\Formacion\gestorMarcas\gestorMarcas\bin\System.Web.Http.WebHost.dll
@@ -131,10 +133,11 @@ C:\Formacion\gestorMarcas\gestorMarcas\bin\System.Web.WebPages.Razor.dll
 C:\Formacion\gestorMarcas\gestorMarcas\bin\WebGrease.dll
 C:\Formacion\gestorMarcas\gestorMarcas\bin\EntityFramework.xml
 C:\Formacion\gestorMarcas\gestorMarcas\bin\EntityFramework.SqlServer.xml
-C:\Formacion\gestorMarcas\gestorMarcas\bin\Newtonsoft.Json.xml
 C:\Formacion\gestorMarcas\gestorMarcas\bin\System.Net.Http.Formatting.xml
-C:\Formacion\gestorMarcas\gestorMarcas\bin\System.Web.Helpers.xml
 C:\Formacion\gestorMarcas\gestorMarcas\bin\System.Web.Http.xml
+C:\Formacion\gestorMarcas\gestorMarcas\bin\System.Web.Http.Cors.xml
+C:\Formacion\gestorMarcas\gestorMarcas\bin\Newtonsoft.Json.xml
+C:\Formacion\gestorMarcas\gestorMarcas\bin\System.Web.Helpers.xml
 C:\Formacion\gestorMarcas\gestorMarcas\bin\System.Web.Http.WebHost.xml
 C:\Formacion\gestorMarcas\gestorMarcas\bin\System.Web.Mvc.xml
 C:\Formacion\gestorMarcas\gestorMarcas\bin\System.Web.Optimization.xml

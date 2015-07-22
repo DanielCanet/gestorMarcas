@@ -8,6 +8,7 @@ using gestorMarcas.Models;
 
 namespace gestorMarcas.Controllers
 {
+    [RoutePrefix("api/GestorMarcas")]
     public class GestorMarcasController : ApiController
     {
         // GET api/<controller>
@@ -17,12 +18,22 @@ namespace gestorMarcas.Controllers
         }
 
         // GET api/<controller>/5
+        [Route("category/{bornDate}/{sex}")]
         public string GetCategory(string bornDate, string sex)
         {
             Athlete athlete = new Athlete();
             athlete.BornDate = DateTime.Parse(bornDate);
 
             return athlete.GetCategory();
+        }
+
+        [Route("years/{bornDate}/{sex}")]
+        public string GetYearCategory(string bornDate, string sex)
+        {
+            Athlete athlete = new Athlete();
+            athlete.BornDate = DateTime.Parse(bornDate);
+
+            return athlete.GetYearCategory();
         }
 
         // POST api/<controller>

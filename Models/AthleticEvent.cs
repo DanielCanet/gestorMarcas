@@ -18,7 +18,9 @@ namespace gestorMarcas.Models
 
         public AthleticEvent(String xmlFilePath)
         {
-            this.xElement = XElement.Load(xmlFilePath);
+            //this.xElement = XElement.Load(xmlFilePath);
+            string mapLoc = HttpContext.Current.Request.MapPath(xmlFilePath);
+            this.xElement = XElement.Load(mapLoc);
         }
 
         public decimal GetVelocityRacePercentage(Athlete athlete, VelocityRace athleticVelocityRace, decimal personalResult)

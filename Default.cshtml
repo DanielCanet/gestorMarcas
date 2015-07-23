@@ -16,7 +16,7 @@
             <label for="fecha_alta">Fecha de nacimiento</label>
         </div>
         <div class="col-md-2">
-            <input type="date" class="form-control" id="fecha_nacimiento" placeholder="Fecha alta">
+            <input type="date" class="form-control" id="fecha_nacimiento" placeholder="Fecha alta" value="1973-01-02">
         </div>
     </div>
     
@@ -57,10 +57,21 @@
         </div>
     </div>
 
-
+    <div class="row">
+        <div class="col-md-1">
+            <label for="fecha_alta">Marca personal</label>
+        </div>
+        <div class="col-md-2">
+            <input type="text" class="form-control" id="marca" placeholder="Marca personal" value="7,33">
+        </div>
+    </div>
 
     <div id="content" style="background-color:Black;color:white;">
-        <button type="button" class="btn btn-primary" id="bonus" onclick="getCategory($('#fecha_nacimiento').val());" class="glyphicon glyphicon-usd">Categoríaaaa</button>
+        <button type="button" class="btn btn-primary" id="btnCategoria" onclick="getCategory($('#fecha_nacimiento').val());" class="glyphicon glyphicon-usd">Categoría</button>
+    </div>
+    
+    <div id="content" style="background-color:Black;color:white;">
+        <button type="button" class="btn btn-primary" id="btnPorcentage" onclick="getPercentage($('#fecha_nacimiento').val());" class="glyphicon glyphicon-usd">Porcentaje</button>
     </div>
 </body>
 </html>
@@ -79,7 +90,26 @@
 
     function getCategory(fecha_nacimiento) {
         $.ajax({
-            url: "http://marcas.sergioacortes.com/api/GestorMarcas/years/" + fecha_nacimiento + '/M' ,
+            
+            //url: "http://marcas.sergioacortes.com/api/GestorMarcas/years/" + fecha_nacimiento + '/M',
+            
+            url: "/api/GestorMarcas/years/" + fecha_nacimiento + '/M',
+            type: "GET",
+            statusCode: {
+                200: function (data) {
+                    jQuery("#content").hide("slow", function () {
+                        $(this).html(data).show("slow");
+                    });
+                },
+                404: function () { alert("fail"); }
+            }
+        });
+    }
+
+    function getPercentage(fecha_nacimiento) {
+        $.ajax({
+
+            url: "/api/GestorMarcas/percentage/" + fecha_nacimiento + '/7,33',
             type: "GET",
             statusCode: {
                 200: function (data) {

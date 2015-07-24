@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Web;
+using System.Web.UI.WebControls;
 using System.Web.WebPages;
 using System.Xml; 
 using System.Xml.Linq;
@@ -14,13 +15,16 @@ namespace gestorMarcas.Models
     public class AthleticEvent
     {
 
-        private XElement xElement { get; set; }
+        //private XElement xElement { get; set; }
+        private XmlDocument xml { get; set; }
 
         public AthleticEvent(String xmlFilePath)
         {
-            //this.xElement = XElement.Load(xmlFilePath);
             string mapLoc = HttpContext.Current.Request.MapPath(xmlFilePath);
-            this.xElement = XElement.Load(mapLoc);
+
+            this.xml = new XmlDocument();
+            xml.Load(mapLoc); 
+
         }
 
         public decimal GetVelocityRacePercentage(Athlete athlete, VelocityRace athleticVelocityRace, decimal personalResult)
@@ -41,14 +45,11 @@ namespace gestorMarcas.Models
             string bornYear = athlete.GetYearsOld().ToString();
             string sex = athlete.Sex.ToString();
 
-            var mark = from nm in this.xElement.Elements("category")
-                       where (string)nm.Attribute("sex") == sex && 
-                       (string)nm.Attribute("age") == bornYear && 
-                       (string)nm.Element("event").Attribute("name") == velocityRaceType.ToString()
-                       select nm.Element("event");
-            foreach (XElement bestMark in mark)
+            XmlNodeList xnList = xml.SelectNodes("/bestMarks/category[@sex='" + sex + "' and @age='" + bornYear + "']/event[@name='" + velocityRaceType + "']");
+
+            foreach (XmlNode xn in xnList)
             {
-                result = bestMark.Element("mark").Value.AsDecimal();
+                result = xn.InnerText.AsDecimal();
             }
 
             return result;

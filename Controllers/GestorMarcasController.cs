@@ -41,20 +41,37 @@ namespace gestorMarcas.Controllers
         }
 
         [HttpGet]
-        [Route("percentage/{bornDate}/{personalBest}")]
-        public string GetPercentage(string bornDate, string personalBest)
+        [Route("percentage/{bornDate}/{sexCategory}/{eventName}/{personalBest}")]
+        public string GetPercentage(string bornDate, string sexCategory, string eventName, string personalBest)
         {
             AthleticEvent athleticEvent = new AthleticEvent("~/App_Data/BestMarks.xml");
             Athlete athlete = new Athlete();
             athlete.BornDate = DateTime.Parse(bornDate);
-            athlete.Sex = Person.eSex.M;
+            athlete.Sex = (Person.eSex)Enum.Parse(typeof(Person.eSex), sexCategory);
 
             VelocityRace velocityRaceEvent = new VelocityRace();
-            velocityRaceEvent.VelocityRaceType = eVelocityRaceType.m60ll;
-            //Action
+            velocityRaceEvent.VelocityRaceType = (eVelocityRaceType)Enum.Parse(typeof(eVelocityRaceType), eventName);
+
             decimal result = athleticEvent.GetVelocityRacePercentage(athlete, velocityRaceEvent, personalBest.AsDecimal());
             return result.ToString();
         }
+
+        //[HttpGet]
+        //[Route("percentage/{bornDate}/{sex}/{event}/{personalBest}")]
+        //public string GetPercentage(string bornDate, string sex, string eventName, string personalBest)
+        //{
+        //    AthleticEvent athleticEvent = new AthleticEvent("~/App_Data/BestMarks.xml");
+
+        //    Athlete athlete = new Athlete();
+        //    athlete.BornDate = DateTime.Parse(bornDate);
+        //    athlete.Sex = (Person.eSex)Enum.Parse(typeof(Person.eSex), sex);
+
+        //    VelocityRace velocityRaceEvent = new VelocityRace();
+        //    velocityRaceEvent.VelocityRaceType = (eVelocityRaceType)Enum.Parse(typeof(eVelocityRaceType), eventName);
+
+        //    decimal result = athleticEvent.GetVelocityRacePercentage(athlete, velocityRaceEvent, personalBest.AsDecimal());
+        //    return result.ToString();
+        //}
 
         // POST api/<controller>
         public void Post([FromBody]string value)
